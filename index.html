@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#40E0D0">
+    <title>Tansiyon Takip</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="./icons/192_hypertension.png">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => console.log('ServiceWorker registered'))
+                .catch(error => console.log('ServiceWorker error:', error));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tansiyon Takip</h1>
+            <p>Günlük tansiyon değerlerinizi kaydedin ve takip edin</p>
+        </div>
+
+        <div class="input-form">
+            <div class="form-group">
+                <label>Tarih</label>
+                <input type="date" id="date">
+            </div>
+            <div class="form-group">
+                <label>Saat</label>
+                <input type="time" id="time">
+            </div>
+            <div class="form-group">
+                <label>Büyük Tansiyon</label>
+                <input type="number" id="systolic" placeholder="Büyük tansiyon değeri">
+            </div>
+            <div class="form-group">
+                <label>Küçük Tansiyon</label>
+                <input type="number" id="diastolic" placeholder="Küçük tansiyon değeri">
+            </div>
+            <div class="form-group">
+                <label>Nabız</label>
+                <input type="number" id="pulse" placeholder="Nabız değeri">
+            </div>
+            <div class="form-group">
+                <label>Not (Opsiyonel)</label>
+                <textarea id="note" placeholder="Varsa eklemek istediğiniz notlar..."></textarea>
+            </div>
+            <button type="button" onclick="saveRecord()">Kaydet</button>
+        </div>
+
+        <div class="records">
+            <h2>Önceki Ölçümler</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Büyük</th>
+                        <th>Küçük</th>
+                        <th>Nabız</th>
+                        <th>Not</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsTable">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
