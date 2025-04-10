@@ -1,0 +1,26 @@
+{
+    "name": "Tansiyon Takip",
+    "short_name": "Tansiyon",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#F0FFFF",
+    "theme_color": "#40E0D0",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "./icons/72_hypertension.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "./icons/192_hypertension.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./icons/hypertension.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
